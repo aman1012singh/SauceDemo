@@ -1,0 +1,49 @@
+{
+  "name": "4saucedemo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "testcases": "npx playwright test",
+    "loginOnChrome": "npx playwright test login.spec.ts --project chromium --headed",
+    "allure": "npx allure serve allure-results",
+    "htmlReport": "npx playwright show-report",
+    "test": "npx nyc --reporter=lcov --reporter=text playwright test",
+    "coverage": "npx nyc report --reporter=text-summary"
+  },
+  "nyc": {
+    "extends": "@istanbuljs/nyc-config-typescript",
+    "check-coverage": true,
+    "all": true,
+    "include": [
+      "tests/SpecFile/*.spec.ts"
+    ],
+    "exclude": [
+      "src/_tests_/**/*.*"
+    ],
+    "reporter": [
+      "html",
+      "lcov",
+      "text",
+      "text-summary"
+    ],
+    "report-dir": "coverage"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@istanbuljs/nyc-config-typescript": "^1.0.2",
+    "@playwright/test": "^1.41.2",
+    "@types/node": "^20.11.20",
+    "allure-commandline": "^2.27.0",
+    "allure-playwright": "^2.13.0",
+    "exceljs": "^4.4.0",
+    "nyc": "^15.1.0"
+  },
+  "dependencies": {
+    "csv-parse": "^5.5.3",
+    "winston": "^3.11.0",
+    "xlsx": "^0.18.5"
+  }
+}

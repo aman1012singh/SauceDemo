@@ -1,0 +1,2 @@
+2024-02-28 15:35:47:3547 info: Item Selected
+2024-02-28 15:35:49:3549 info: Succesfull order placed
